@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Category{% endblock %}
+
+{% block body %}
+    <style>
+        /* Custom styles for the Edit Category page */
+        h1 {
+            text-align: center;
+            color: #3482A3;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .edit-section {
+            padding: 50px 0;
+            background-color: #f8f8f8;
+        }
+
+        .edit-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .edit-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .edit-form label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .edit-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.2s ease;
+        }
+
+        .edit-form input[type="text"]:focus {
+            outline: none;
+            border-color: #3482A3;
+        }
+
+        .edit-form .btn-secondary,
+        .edit-form .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .edit-form .btn-primary {
+            background-color: #3482A3;
+            color: #fff;
+            border: none;
+            margin-right: 10px;
+        }
+
+
+
+
+        .edit-form .btn-primary:hover {
+            background-color: #145F73;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #145F73;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color:#3482A3;
+        }
+    </style>
+    <div class="container">
+        <div class="row edit-section">
+            <div class="col-md-8 offset-md-2">
+                <div class="edit-form">
+                    <h1>Edit Category</h1>
+                    <div class="form-group">
+                        {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
+                    </div>
+                    <div class="form-group text-center">
+                        <a class="btn btn-primary" href="{{ path('app_category_index') }}">Back to List</a>
+                        <a class="btn btn-primary" href="{{ path('app_category_delete', {'id': category.id}) }}">Delete Category</a>
+                    </div>
+                    <a class="back-link" href="{{ path('app_category_index') }}">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

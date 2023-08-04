@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category{% endblock %}
+
+{% block body %}
+    <style>
+        /* Custom styles for the Category page */
+        h1 {
+            text-align: center;
+            color: #3482A3;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .category-section {
+            padding: 50px 0;
+            background-color: #f8f8f8;
+        }
+
+        .category-details {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-details .table {
+            width: 100%;
+        }
+
+        .category-details .table th,
+        .category-details .table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .category-details .table thead th {
+            background-color: #3482A3;
+            color: #fff;
+        }
+
+        .category-details .table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .category-actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .category-actions a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .category-actions a.btn-primary {
+            background-color: #3482A3;
+            color: #fff;
+            border: none;
+        }
+
+        .category-actions a.btn-primary:hover {
+            background-color: #145F73;
+        }
+
+
+    </style>
+    <div class="container">
+        <div class="row category-section">
+            <div class="col-md-8 offset-md-2">
+                <div class="category-details">
+                    <h1>Category</h1>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ category.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Name Category</th>
+                            <td>{{ category.NameCategory }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="category-actions">
+                        <a class="btn btn-primary" href="{{ path('app_category_index') }}">Back to List</a>
+                        <a class="btn btn-primary" href="{{ path('app_category_edit', {'id': category.id}) }}">Edit</a>
+                    </div>
+                    {{ include('category/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

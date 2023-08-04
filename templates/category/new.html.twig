@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Category{% endblock %}
+
+{% block body %}
+    <style>
+        /* Custom styles for the New Category page */
+        h1 {
+            text-align: center;
+            color: #3482A3;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .new-category-section {
+            padding: 50px 0;
+            background-color: #f8f8f8;
+        }
+
+        .new-category-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .new-category-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .new-category-form label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .new-category-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.2s ease;
+        }
+
+        .new-category-form input[type="text"]:focus {
+            outline: none;
+            border-color: #3482A3;
+        }
+
+        .new-category-form .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            background-color: #3482A3;
+            color: #fff;
+            border: none;
+        }
+
+        .new-category-form .btn-primary:hover {
+            background-color: #145F73;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #145F73;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <div class="container">
+        <div class="row new-category-section">
+            <div class="col-md-8 offset-md-2">
+                <div class="new-category-form">
+                    <h1>Create new Category</h1>
+                    <div class="form-group">
+                        {{ include('category/_form.html.twig') }}
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                    <a class="back-link" href="{{ path('app_category_index') }}">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

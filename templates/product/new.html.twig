@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Product{% endblock %}
+
+{% block body %}
+    <style>
+        /* Custom styles for the New Product page */
+        h1 {
+            text-align: center;
+            color: #3482A3;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .new-product-section {
+            padding: 50px 0;
+            background-color: #f8f8f8;
+        }
+
+        .new-product-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .new-product-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .new-product-form label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .new-product-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.2s ease;
+        }
+
+        .new-product-form input[type="text"]:focus {
+            outline: none;
+            border-color: #3482A3;
+        }
+
+        .new-product-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            transition: border-color 0.2s ease;
+        }
+
+        .new-product-form textarea:focus {
+            outline: none;
+            border-color: #3482A3;
+        }
+
+        .new-product-form .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            background-color: #3482A3;
+            color: #fff;
+            border: none;
+        }
+
+        .new-product-form .btn-primary:hover {
+            background-color: #145F73;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #145F73;
+            font-size: 24px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <div class="container">
+        <div class="row new-product-section">
+            <div class="col-md-8 offset-md-2">
+                <div class="new-product-form">
+                    <h1>Create new Product</h1>
+                    <div class="form-group">
+                        {{ include('product/_form.html.twig') }}
+                    </div>
+
+                    <a class="back-link" href="{{ path('app_product_index') }}">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

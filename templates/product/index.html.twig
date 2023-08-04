@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+
+{% block body %}
+    <style>
+        h1{
+            text-align: center;
+            margin: 20px;
+            color: #3482A3;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .container-form {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .table thead th {
+            background-color: #3482A3;
+            color: #fff;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .table th {
+            background-color: #f5f5f5;
+        }
+
+
+
+        .actions {
+            white-space: nowrap;
+        }
+
+        .actions a {
+            margin-right: 5px;
+        }
+
+        .no-records {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .create-new {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #3482A3;
+        }
+    </style>
+<div class="container-form mt-5">
+    <h1>Product index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Name_Product </th>
+                <th> Image_Product </th>
+                <th> Price_Product </th>
+                <th> Description_Product </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.NameProduct }}</td>
+                <td>    <img src="{{ asset('image/' ~ product.getImageProduct()) }}" class="product-image" alt="{{ product.getNameProduct() }}"></td>
+                <td>{{ product.PriceProduct }}</td>
+                <td>{{ product.DescriptionProduct }}</td>
+                <td class="actions">
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-info btn-sm">show</a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-primary btn-sm">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6" class="no-records">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_product_new') }}" class="create-new">Create new</a>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Font+Name&display=swap');
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo b {
+    font: 2em "Vibur";
+    color: #0FCFF9;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #329AF7, 0 0 0.5em #329AF7, 0 0 0.1em #329AF7, 0 10px 3px #000;
+}
+
+.logo b span {
+    animation: blink linear infinite 2s;
+}
+
+.logo b span:nth-of-type(2) {
+    animation: blink linear infinite 3s;
+}
+
+@keyframes blink {
+    78% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    79% {
+        color: #333;
+    }
+    80% {
+        text-shadow: none;
+    }
+    81% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    82% {
+        color: #333;
+        text-shadow: none;
+    }
+    83% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    92% {
+        color: #333;
+        text-shadow: none;
+    }
+    92.5% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+/* Màu chữ cho các liên kết */
+.navbar-nav .nav-link {
+    color:#0B3E37;
+}
+
+/* Màu chữ khi di chuột hover */
+.navbar-nav .nav-link:hover {
+    color: #6FA8DC;
+}
+
+
+ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lucida Sans Unicode;
+}
+
+

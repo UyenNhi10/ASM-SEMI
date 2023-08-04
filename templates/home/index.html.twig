@@ -1,0 +1,306 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home!{% endblock %}
+
+{% block body %}
+
+    <style>
+        h1{
+            color: #3482A3;
+        }
+        main { margin: 0; display: block; }
+        .title { font-size: 1.5em; display: flex; justify-content: center; align-items: center; color: #0970BC; }
+        .title img{ border-radius: 50%; width: 5rem; }
+
+.card-title{
+    color: #2D98A8;
+}
+        .product-card {
+            transition: transform 0.2s;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card .card-body {
+            padding: 10px;
+        }
+
+        .product-card .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-card .card-text {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .product-card .card-footer {
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .addToCartBtn {
+            background-color: #3482A3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .addToCartBtn:hover {
+            background-color: #3482A3;
+        }
+
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0 17em; /* Giảm giá trị của gap thành 10em hoặc giá trị phù hợp */
+        }
+
+
+        .my-custom-container{
+            padding-top: 10px;
+        }
+
+        h2{
+            text-align: center;
+            padding: 20px;
+            color: #3482A3;
+        }
+
+        .slick-slide{
+            margin: 0 20px;
+        }
+
+        .slick-slide img{
+            width: 100%;
+        }
+
+        .slick-slider{
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .slick-list{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slick-track{
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block
+        }
+
+        .slick-slide{
+            display: none;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+
+        .slick-slide img{
+            display: block;
+        }
+
+        .slick-initialized .slick-slide{
+            display: block;
+        }
+
+        .copy{
+            padding-top: 250px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <div class="my-custom-container">
+        <h2 class="text-center font-weight-bold">Our Partners</h2>
+        <section class="customer-logos slider">
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 23}) }}">
+                    <img src="Image/9.jpg" alt="logo">
+            </a> </div>
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 24}) }}">
+                <img src="Image/131.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 25}) }}">
+                <img src="Image/11.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 26}) }}">
+                <img src="Image/133.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 20}) }}">
+                <img src="Image/121.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 27}) }}">
+                <img src="Image/130.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 6}) }}">
+                <img src="Image/135.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="{{ path('app_product_productdetail', {'id': 9}) }}">
+                <img src="Image/96.jpg" alt="logo">
+                </a>
+            </div>
+        </section>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.customer-logos').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover:false,
+                responsive: [{
+                    breakpoint: 768,
+                    setting: {
+                        slidesToShow:4
+                    }
+                }, {
+                    breakpoint: 520,
+                    setting: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        });
+    </script>
+
+    </br>
+
+
+    <main>
+        <div class="title">
+            <p1>Enjoy the beautiful bouquets</p1>
+            <img src="/Image/flowers.gif">
+        </div>
+    </main>
+
+    </br>
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner" style="max-width: 500px; margin: auto;">
+            <div class="carousel-item active">
+                <a href="{{ path('app_product_productdetail', {'id': 28}) }}">
+
+                <img src="Image/1.jpg" alt="Los Angeles"  class="d-block" style="width:100%">
+                </a>
+                <div class="carousel-caption">
+                    <h3 style="font-size: 14px;">Bouquet</h3>
+                    <p style="font-size: 12px;">We love the Flower!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="{{ path('app_product_productdetail', {'id': 3}) }}">
+                <img src="Image/2.jpg" alt="Chicago" class="d-block" style="width:100%">
+                </a>
+                <div class="carousel-caption">
+                    <h3 style="font-size: 14px;" >Bouquet</h3>
+                    <p style="font-size: 12px;">We love the Flower!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="{{ path('app_product_productdetail', {'id': 29}) }}">
+                <img src="Image/6.jpg" alt="New York" class="d-block" style="width:100%">
+                </a>
+                <div class="carousel-caption">
+                    <h3 style="font-size: 14px;">Bouquet</h3>
+                    <p style="font-size: 12px;">We love the Flower!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" style="margin-right: -650px; background-color: #5eb5e0; " ></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon" style=" margin-left: -650px; background-color: #5eb5e0;" ></span>
+        </button>
+
+    </div>
+
+    </br>
+
+
+
+
+    <h1 class="text-center mt-5">List Of Featured Products</h1><br/>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for product in products %}
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <a href="{{ path('app_product_productdetail', {'id': product.getId()}) }}" class="product-image-link">
+                    <img src="{{ asset('image/' ~ product.getImageProduct()) }}" class="card-img-top" alt="{{ product.getNameProduct() }}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.getNameProduct() }}</h5>
+
+                        <p class="card-text">Price: {{ product.getPriceProduct() }}VND</p>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+    <script>
+        // Xử lý sự kiện click vào hình ảnh sản phẩm
+        const productImageLinks = document.querySelectorAll('.product-image-link');
+        productImageLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.location.href = link.getAttribute('href');
+            });
+        });
+    </script>
+{% endblock %}

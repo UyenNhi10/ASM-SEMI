@@ -1,0 +1,141 @@
+{# templates/about/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}About{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/custom-about.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <style>
+        h1{
+            color: #3482A3;
+        }
+        .container {
+            margin-top: 40px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: #3482A3;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .about-quote {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .about-quote blockquote {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .about-quote blockquote p {
+            margin-bottom: 10px;
+        }
+
+        .about-quote blockquote cite {
+            font-size: 16px;
+            font-style: normal;
+        }
+
+        @media (max-width: 767px) {
+            .about-image,
+            .about-text {
+                margin-bottom: 30px;
+            }
+        }
+        h3{
+            color: #3482A3;
+        }
+
+    </style>
+    <div class="container">
+        <div class="about-header">
+            <h1>About Us</h1>
+            <p>Welcome to our flower shop! We are passionate about bringing the beauty of nature into your life through our exquisite collection of flowers.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="{{ asset('image/tiem.jpg') }}" alt="Flower Shop">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>At our flower shop, we believe that flowers have the power to brighten any occasion and bring joy to people's lives. Whether it's a special celebration, a heartfelt gesture, or a simple moment of appreciation, our flowers are carefully selected and arranged to convey your emotions and create unforgettable memories.</p>
+                        <p>We take pride in offering a wide variety of fresh and vibrant flowers, sourced from local farms and around the world. From classic roses to exotic orchids, our selection is curated to cater to every taste and style.</p>
+                        <p>Our team of talented florists is dedicated to crafting stunning floral arrangements that reflect your personal style and vision. We pay attention to every detail, ensuring that each bouquet and centerpiece is a true work of art.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-quote">
+                        <blockquote>
+                            <p>"Flowers are the music of the ground. From earth's lips spoken without sound."</p>
+                            <cite>- Edwin Curran</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h2>Our Mission</h2>
+                        <p>Customer satisfaction is our top priority. We strive to provide exceptional service, from the moment you explore our website to the delivery of your flowers. Our goal is to exceed your expectations and make your flower shopping experience seamless and enjoyable.</p>
+                        <p>Thank you for choosing our flower shop. We look forward to being a part of your special moments and helping you express your emotions through the language of flowers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="{{ asset('image/0.jpg') }}" alt="Flowers">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-contact">
+                        <h3>Contact Us</h3>
+                        <p>If you have any inquiries or need assistance, don't hesitate to get in touch with us:</p>
+                        <ul>
+                            <li><strong>Address:</strong> 123 Flower Street, City, Country</li>
+                            <li><strong>Phone:</strong> +1 (123) 456-7890</li>
+                            <li><strong>Email:</strong> info@flowershop.com</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

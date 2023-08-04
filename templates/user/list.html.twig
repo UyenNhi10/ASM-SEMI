@@ -1,0 +1,67 @@
+{# templates/user/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Registered Users{% endblock %}
+
+{% block body %}
+    <style>
+        /* Custom styles for the Registered Users page */
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3482A3;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f8f8f8;
+        }
+
+    </style>
+    <div class="container">
+        <h1>Registered Users</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Roles</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.getId() }}</td>
+                    <td>{{ user.getEmail() }}</td>
+                    <td>{{ user.getPassword() }}</td>
+                    <td>{{ user.getRoles()|join(', ') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

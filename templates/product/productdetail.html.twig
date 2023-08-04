@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.getNameProduct() }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-image">
+                    <img src="{{ asset('image/' ~ product.getImageProduct()) }}" alt="{{ product.getNameProduct() }}" class="img-fluid rounded" style="width: 100%; max-height: 400px; object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-details" style="padding: 20px;">
+                    <h1 class="mb-3" style="color: #3482A3; font-size: 28px; font-weight: bold;">{{ product.getNameProduct() }}</h1>
+                    <p class="product-price h4 mb-4" style="color: #4CAF50;">Price: {{ product.getPriceProduct() }}VND</p>
+                    <p class="product-description" style="color: #333; font-size: 16px; line-height: 1.6;">{{ product.getDescriptionProduct() }}</p>
+                    <button class="btn addToCartBtn mt-3" data-product-id="{{ product.getId() }}" style="background-color: #3482A3; color: #fff; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

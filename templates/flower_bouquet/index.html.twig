@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FlowerBouquetController!{% endblock %}
+
+{% block body %}
+    <style>
+        h1{
+            color: #3482A3;
+        }
+        .product-card {
+            transition: transform 0.2s;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card .card-body {
+            padding: 10px;
+        }
+
+        .product-card .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-card .card-text {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .product-card .card-footer {
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .addToCartBtn {
+            background-color: #3482A3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .addToCartBtn:hover {
+            background-color: #3482A3;
+        }
+        .card-title{
+            color: #2D98A8;
+        }
+    </style>
+    <h1 class="text-center mt-5">List Of Products</h1><br/>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for product in products %}
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <img src="{{ asset('image/' ~ product.getImageProduct()) }}" class="card-img-top" alt="{{ product.getNameProduct() }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.getNameProduct() }}</h5>
+                        <p class="card-text">{{ product.getDescriptionProduct() }}</p>
+                        <p class="card-text">Price: {{ product.getPriceProduct() }}VND</p>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+
+
+{% endblock %}

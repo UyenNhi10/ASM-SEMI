@@ -1,0 +1,100 @@
+{# templates/flower_whisper/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Flower Whisper{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/custom-flower-whisper.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <style>
+        h1{
+            color: #3482A3;
+        }
+        h2{
+            color: #3482A3;
+        }
+        .container {
+            margin-top: 40px;
+        }
+
+        .flower-whisper-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .flower-whisper-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .flower-whisper-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .flower-whisper-text h2 {
+            margin-bottom: 20px;
+        }
+
+        .flower-whisper-text p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 767px) {
+            .flower-whisper-image,
+            .flower-whisper-text {
+                margin-bottom: 30px;
+            }
+        }
+
+    </style>
+    <div class="container">
+        <div class="flower-whisper-header">
+            <h1>Flower Whisper</h1>
+            <p>Discover the hidden language of flowers and let them convey your emotions.</p>
+        </div>
+
+        <div class="flower-whisper-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="flower-whisper-text">
+                        <h2>The Language of Flowers</h2>
+                        <p>Flowers have a unique way of communicating without words. Each flower has its own meaning, symbolizing different emotions, wishes, and messages. The art of using flowers to convey sentiments is known as the Language of Flowers.</p>
+                        <p>At Flower Whisper, we specialize in helping you express your feelings through the language of flowers. Whether you want to send a message of love, friendship, gratitude, or sympathy, our floral arrangements and bouquets are designed to speak directly to the heart.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="flower-whisper-image">
+                        <img src="{{ asset('image/v1.jpg') }}" alt="Flower Whisper">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="flower-whisper-image">
+                        <img src="{{ asset('image/v2.jpg') }}" alt="Floral Arrangement">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="flower-whisper-text">
+                        <h2>Express Your Emotions</h2>
+                        <p>Every occasion calls for a unique expression of emotions. Whether it's a romantic gesture, a joyful celebration, a heartfelt apology, or a moment of remembrance, our expert florists will help you select the perfect combination of flowers that convey your message with grace and beauty.</p>
+                        <p>From elegant bouquets to intricate floral arrangements, we create stunning designs that capture the essence of your sentiments. Let Flower Whisper be your guide in the world of flower symbolism and make your gestures even more meaningful.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
