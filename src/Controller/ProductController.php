@@ -111,7 +111,7 @@ class ProductController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    // Xử lý ngoại lệ khi không thể di chuyển tệp
+                    // Handle file upload error
                 }
 
                 $product->setImageProduct($newFilename);
