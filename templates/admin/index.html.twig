@@ -1,0 +1,52 @@
+{# admin/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Product and Category Management{% endblock %}
+
+{% block body %}
+<style>
+
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 30vh; /* This ensures the container takes up the full viewport height */
+    }
+    h1{
+        color: #3482A3;
+    }
+    btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-group .btn {
+        margin: 5px;
+        width: 100px; /* Adjust the width as needed */
+    }
+
+    .btn {
+        margin: 5px;
+        background-color: #3482A3;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+</style>
+
+    <div class="container-form">
+        <h1>Admin Management</h1><br/>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="{{ path('app_product_index') }}" class="btn addToCartBtn mt-3">Product</a>
+            <a href="{{ path('app_category_index') }}" class="btn addToCartBtn mt-3">Category</a>
+            <a href="{{ path('app_contact_index') }}" class="btn addToCartBtn mt-3">Contact</a>
+            <a href="{{ path('user_list') }}" class="btn addToCartBtn mt-3">Account</a>
+        </div>
+    </div>
+{% endblock %}
