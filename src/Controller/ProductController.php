@@ -116,7 +116,7 @@ class ProductController extends AbstractController
 
                 $product->setImageProduct($newFilename);
             } else {
-                // Gán giá trị null cho thuộc tính image
+              
                 $product->setImageProduct(null);
             }
 
